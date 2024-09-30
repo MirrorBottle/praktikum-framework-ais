@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'framework.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ais',  # Nama database yang telah dibuat di phpMyAdmin
+        'USER': 'root',          # User default MySQL di XAMPP
+        'PASSWORD': '',          # Biasanya password default di XAMPP kosong (tidak diisi)
+        'HOST': '127.0.0.1',     # Host MySQL di XAMPP (localhost)
+        'PORT': '3306',  
     }
 }
 
@@ -123,3 +127,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
